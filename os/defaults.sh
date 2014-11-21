@@ -17,22 +17,6 @@ echo "This script will make your Mac awesome"
 ###############################################################################
 
 echo ""
-echo "Hide the Time Machine, Volume, User, and Bluetooth icons"
-for domain in ~/Library/Preferences/ByHost/com.apple.systemuiserver.*; do
-  defaults write "${domain}" dontAutoLoad -array \
-    "/System/Library/CoreServices/Menu Extras/TimeMachine.menu" \
-    "/System/Library/CoreServices/Menu Extras/Volume.menu" \
-    "/System/Library/CoreServices/Menu Extras/User.menu"
-done
-defaults write com.apple.systemuiserver menuExtras -array \
-  "/System/Library/CoreServices/Menu Extras/Bluetooth.menu" \
-  "/System/Library/CoreServices/Menu Extras/AirPort.menu" \
-  "/System/Library/CoreServices/Menu Extras/Battery.menu" \
-  "/System/Library/CoreServices/Menu Extras/Clock.menu"
-
-sudo chmod 600 /System/Library/CoreServices/Search.bundle/Contents/MacOS/Search
-
-echo ""
 echo "Disabling OS X Gate Keeper"
 echo "(You'll be able to install any app you want from here on, not just Mac App Store apps)"
 sudo spctl --master-disable
@@ -83,7 +67,7 @@ echo "Check for software updates daily, not just once per week"
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 echo ""
-echo "Disable smart quotes and smart dashes as theyâ€™re annoying when typing code"
+echo "Disable smart quotes and smart dashes as they're annoying when typing code"
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
@@ -97,25 +81,12 @@ echo "Increasing sound quality for Bluetooth headphones/headsets"
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
 
 echo ""
-echo "Enabling full keyboard access for all controls (e.g. enable Tab in modal dialogs)"
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-
-echo ""
 echo "Disabling press-and-hold for keys in favor of a key repeat"
 defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 
 echo ""
 echo "Setting a blazingly fast keyboard repeat rate (ain't nobody got time fo special chars while coding!)"
 defaults write NSGlobalDomain KeyRepeat -int 0
-
-echo ""
-echo "Disabling auto-correct"
-defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
-
-echo ""
-echo "Setting trackpad & mouse speed to a reasonable number"
-defaults write -g com.apple.trackpad.scaling 2
-defaults write -g com.apple.mouse.scaling 2.5
 
 echo ""
 echo "Turn off keyboard illumination when computer is not used for 5 minutes"
@@ -143,24 +114,8 @@ sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutio
 ###############################################################################
 
 echo ""
-echo "Showing icons for hard drives, servers, and removable media on the desktop"
-defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
-
-echo ""
-echo "Showing all filename extensions in Finder by default"
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
-
-echo ""
-echo "Showing status bar in Finder by default"
-defaults write com.apple.finder ShowStatusBar -bool true
-
-echo ""
 echo "Allowing text selection in Quick Look/Preview in Finder by default"
 defaults write com.apple.finder QLEnableTextSelection -bool true
-
-echo ""
-echo "Displaying full POSIX path as Finder window title"
-defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
 
 echo ""
 echo "Disabling the warning when changing a file extension"
@@ -192,13 +147,9 @@ echo "Enabling snap-to-grid for icons on the desktop and in other icon views"
 ###############################################################################
 
 # Wipe all (default) app icons from the Dock
-# This is only really useful when setting up a new Mac, or if you donâ€™t use
+# This is only really useful when setting up a new Mac, or if you don't use
 # the Dock to launch apps.
-#defaults write com.apple.dock persistent-apps -array
-
-echo ""
-echo "Setting the icon size of Dock items to 36 pixels for optimal size/screen-realestate"
-defaults write com.apple.dock tilesize -int 36
+defaults write com.apple.dock persistent-apps -array
 
 echo ""
 echo "Speeding up Mission Control animations and grouping windows by application"
@@ -217,27 +168,27 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 ###############################################################################
 
 echo ""
-echo "Hiding Safariâ€™s bookmarks bar by default"
+echo "Hiding Safari's bookmarks bar by default"
 defaults write com.apple.Safari ShowFavoritesBar -bool false
 
 echo ""
-echo "Hiding Safariâ€™s sidebar in Top Sites"
+echo "Hiding Safari's sidebar in Top Sites"
 defaults write com.apple.Safari ShowSidebarInTopSites -bool false
 
 echo ""
-echo "Disabling Safariâ€™s thumbnail cache for History and Top Sites"
+echo "Disabling Safari's thumbnail cache for History and Top Sites"
 defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 echo ""
-echo "Enabling Safariâ€™s debug menu"
+echo "Enabling Safari's debug menu"
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 echo ""
-echo "Making Safariâ€™s search banners default to Contains instead of Starts With"
+echo "Making Safari's search banners default to Contains instead of Starts With"
 defaults write com.apple.Safari FindOnPageMatchesWordStartsOnly -bool false
 
 echo ""
-echo "Removing useless icons from Safariâ€™s bookmarks bar"
+echo "Removing useless icons from Safari's bookmarks bar"
 defaults write com.apple.Safari ProxiesInBookmarksBar "()"
 
 echo ""
@@ -269,10 +220,8 @@ defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 ###############################################################################
 
 echo ""
-echo "Enabling UTF-8 ONLY in Terminal.app and setting the Pro theme by default"
+echo "Enabling UTF-8 ONLY in Terminal.app"
 defaults write com.apple.terminal StringEncodings -array 4
-defaults write com.apple.Terminal "Default Window Settings" -string "Pro"
-defaults write com.apple.Terminal "Startup Window Settings" -string "Pro"
 
 
 ###############################################################################
@@ -289,22 +238,6 @@ hash tmutil &> /dev/null && sudo tmutil disablelocal
 
 
 ###############################################################################
-# Messages                                                                    #
-###############################################################################
-
-echo ""
-echo "Disable automatic emoji substitution (i.e. use plain text smileys)"
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticEmojiSubstitutionEnablediMessage" -bool false
-
-echo ""
-echo "Disable smart quotes as itâ€™s annoying for messages that contain code"
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "automaticQuoteSubstitutionEnabled" -bool false
-
-echo ""
-echo "Disable continuous spell checking"
-defaults write com.apple.messageshelper.MessageController SOInputLineSettings -dict-add "continuousSpellCheckingEnabled" -bool false
-
-###############################################################################
 # Personal Additions
 ###############################################################################
 
@@ -317,11 +250,11 @@ echo "Remove the sleep image file to save disk space"
 sudo rm /Private/var/vm/sleepimage
 echo "Creating a zero-byte file insteadâ€¦"
 sudo touch /Private/var/vm/sleepimage
-echo "â€¦and make sure it canâ€™t be rewritten"
+echo "â€¦and make sure it can't be rewritten"
 sudo chflags uchg /Private/var/vm/sleepimage
 
 echo ""
-echo "Disable the sudden motion sensor as itâ€™s not useful for SSDs"
+echo "Disable the sudden motion sensor as it's not useful for SSDs"
 sudo pmset -a sms 0
 
 echo ""

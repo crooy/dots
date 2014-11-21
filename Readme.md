@@ -15,7 +15,7 @@ One-liner:
 # Credits
 
 * Logo by: [Piotrek Chuchla](http://www.thenounproject.com/pchuchla/)
-* Originally forked from by: [Matthew Mueller's dots](https://github.com/MatthewMueller/dots)
+* Originally forked from: [Matthew Mueller's dots](https://github.com/MatthewMueller/dots)
 
 # License
 
