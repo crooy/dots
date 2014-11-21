@@ -7,50 +7,18 @@ set -e
 # Apps
 apps=(
   #utilities
-  #browsers
-  alfred
-  dropbox
-  google-chrome
-  qlcolorcode
-  screenflick
-  slack
-  transmit
-  appcleaner
-  firefox
-  hazel
-  qlmarkdown
-  seil
+  alfred  
   spotify
-  vagrant
-  arq
   flash
-  iterm2
-  qlprettypatch
-  shiori
-  sublime-text3
-  virtualbox
-  atom
-  flux
-  mailbox
-  qlstephen
-  sketch
-  tower
-  vlc
-  cloudup
-  font-m-plus
-  nvalt
-  quicklook-json
-  skype
-  transmission
-  apikitchen
-  mamp
-)
+  steam
 
-# fonts
-fonts=(
-  font-m-plus
-  font-clear-sans
-  font-roboto
+  #company utils
+  dropbox
+  hipchat
+
+  #browsers
+  firefox
+  google-chrome
 )
 
 # Specify the location of the apps

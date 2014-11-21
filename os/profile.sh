@@ -10,28 +10,13 @@ export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 ## Modify NODE_PATH
 # export NODE_PATH=lib
 
-# Set the Android Home
-# use: brew install android-sdk
-export ANDROID_HOME=/usr/local/opt/android-sdk
-
 # Use sublime for Ctrl+x+e
 EDITOR="subl -w"
-
-# Default cd path for interactive shells
-if test “${PS1+set}”; then
-  CDPATH=:"..:~:~/Projects";
-fi
 
 # Add bash completion (for git and others)
 if [ -f `brew --prefix`/etc/bash_completion ]; then
     . `brew --prefix`/etc/bash_completion
 fi
-
-## Start an HTTP server from a directory, optionally specifying the port
-function server() {
-    local port="${1:-8000}"
-    open "http://localhost:${port}/" && python -m SimpleHTTPServer "$port"
-}
 
 git_branch() {
   # On branches, this will return the branch name
@@ -123,11 +108,6 @@ PROMPT_COMMAND=prompt
 # Aliases #
 ###########
 
-## matrix fun
-function hax0r() {
-    perl -e '$|++; while (1) { print " " x (rand(35) + 1), int(rand(2)) }'
-}
-
 ## Add hub
 eval "$(hub alias -s)"
 
@@ -160,35 +140,8 @@ alias gl="git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
 alias gpom="git pull --rebase origin master"
 alias gcd='cd "`git rev-parse --show-toplevel`"'
 
-## Get the process on a given port
-function port() {
-  lsof -i ":${1:-80}"
-}
-
 ## subl
 alias s="subl -a"
-
-## mongroup
-alias mg=mongroup
-
-## gopen - open to own github
-
-function gopen() {
-  open "https://github.com/matthewmueller/${1}";
-}
-
-
-## Open localhost
-
-function ol() {
-  open "http://localhost:${1:-3000}"
-}
-
-if [[ `node -v` =~ ^v0.11 ]]; then
-  alias node="node --harmony-generators"
-  alias node-dev="node-dev --harmony-generators"
-  alias mocha="mocha --harmony-generators"
-fi
 
 alias wm="watch -q make &"
 
