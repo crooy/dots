@@ -66,6 +66,15 @@ EOF
 
 # Bootstrap the OS
 boot() {
+  
+  # set install type
+  if [[ $1 ]]; then
+    export install="$1"
+  else
+    export install="standard"
+  fi
+
+  # lets run this shit!
   sh "$os/index.sh"
 }
 
