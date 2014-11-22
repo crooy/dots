@@ -10,7 +10,7 @@ sh "$os/defaults.sh"
 sh "$os/binaries.sh"
 sh "$os/apps.sh"
 
-if [[ -e "$os/$1/apps.sh" ]]; then
+if [ -e "$os/$1/apps.sh" ]; then
 	sh "$os/$1/apps.sh"
 fi
 

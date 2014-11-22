@@ -6,17 +6,12 @@ set -e
 
 # Apps
 apps=(
-  #utilities
   alfred  
   spotify
   flash
   steam
-
-  #company utils
   dropbox
   hipchat
-
-  #browsers
   firefox
   google-chrome
 )
@@ -43,16 +38,9 @@ main() {
   # Tap alternative versions
   brew tap caskroom/versions
 
-  # Tap the fonts
-  brew tap caskroom/fonts
-
   # install apps
   echo "installing apps..."
   brew cask install --appdir=$appdir ${apps[@]}
-
-  # install fonts
-  echo "installing fonts..."
-  brew cask install ${fonts[@]}
 
   # link with alfred
   alfred

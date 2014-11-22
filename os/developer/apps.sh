@@ -9,12 +9,10 @@ apps=(
   sublime-text3
   phpstorm
   adobe-creative-cloud
-
   sequel-pro
   sourcetree
   filezilla
   github
-
   mamp
   virtualbox
   vagrant
