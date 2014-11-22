@@ -66,12 +66,7 @@ EOF
 
 # Bootstrap the OS
 boot() {
-  if [[ -e "$os/$1/index.sh" ]]; then
-    sh "$os/$1/index.sh"
-  else
-    echo "boot: could not find \"$1\""
-    exit 1
-  fi
+  sh "$os/index.sh"
 }
 
 # update either dots or OS

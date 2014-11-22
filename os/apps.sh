@@ -11,6 +11,7 @@ apps=(
   flash
   steam
   dropbox
+  evernote
   hipchat
   firefox
   google-chrome
