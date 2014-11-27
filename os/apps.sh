@@ -6,13 +6,18 @@ set -e
 
 # Apps
 apps=(
-  alfred  
+  jumpcut
+  sourcetree
+  caffeine
+  flux
+  google-drive
+  authy-bluetooth
   spotify
   flash
   steam
   dropbox
   evernote
-  hipchat
+  slack
   firefox
   google-chrome
 )
