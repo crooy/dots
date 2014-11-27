@@ -48,8 +48,7 @@ main() {
   echo "installing apps..."
   brew cask install --appdir=$appdir ${apps[@]}
 
-  # link with alfred
-  alfred
+  
   cleanup
 }
 
@@ -60,9 +59,6 @@ homebrew() {
   fi
 }
 
-alfred() {
-  brew cask alfred link
-}
 
 cleanup() {
   brew cleanup
