@@ -29,6 +29,7 @@ binaries=(
   vim
   graphicsmagick
   sbt
+  mackup
   phantomjs
   rename
   python
