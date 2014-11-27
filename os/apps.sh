@@ -13,6 +13,7 @@ apps=(
   caffeine
   bartender
   sequel-pro
+  jitouch
   skype
   controlplane
   sublime-text
