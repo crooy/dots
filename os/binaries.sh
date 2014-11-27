@@ -27,19 +27,18 @@ brew install homebrew/dupes/grep
 # Install other useful binaries
 binaries=(
   graphicsmagick
-  webkit2png
+  sbt
   phantomjs
   rename
-  zopfli
-  ffmpeg
   python
-  mongo
   sshfs
   trash
   tree
   ack
   git
   hub
+  nodejs
+  git-flow
 )
 
 # Install the binaries
