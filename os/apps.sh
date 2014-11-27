@@ -8,12 +8,16 @@ set -e
 apps=(
   jumpcut
   sourcetree
+  vlc
+  iterm2
   caffeine
   bartender
   sublime-text
   flux
   google-drive
   authy-bluetooth
+  appcleaner
+  adobe-air
   spotify
   flash
   steam
