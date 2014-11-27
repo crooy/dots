@@ -26,6 +26,7 @@ brew install homebrew/dupes/grep
 
 # Install other useful binaries
 binaries=(
+  vim
   graphicsmagick
   sbt
   phantomjs
