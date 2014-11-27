@@ -9,6 +9,8 @@ apps=(
   jumpcut
   sourcetree
   caffeine
+  bartender
+  sublime-text
   flux
   google-drive
   authy-bluetooth
