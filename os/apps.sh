@@ -12,6 +12,9 @@ apps=(
   iterm2
   caffeine
   bartender
+  sequel-pro
+  skype
+  controlplane
   sublime-text
   flux
   google-drive
