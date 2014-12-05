@@ -27,14 +27,15 @@ brew install homebrew/dupes/grep
 # Install other useful binaries
 binaries=(
   vim
-  graphicsmagick
+  imagemagick
+  ant
   sbt
   mackup
   phantomjs
   rename
   python
-  sshfs
   trash
+  android-sdk  
   tree
   ack
   git
